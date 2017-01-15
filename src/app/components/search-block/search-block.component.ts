@@ -10,8 +10,8 @@ import 'rxjs/add/operator/map'
 })
 export class SearchBlockComponent implements OnInit {
 
-    private title: string;
-    private searchField: string;
+    public title: string;
+    public searchField: string;
 
     /**
      * ASSIGNMENT 3.1
@@ -30,7 +30,7 @@ export class SearchBlockComponent implements OnInit {
         this.title = "search block component";
     }
 
-    private submit() {
+    public submit() {
         console.log("logging searchQuery: ", this.searchField);
         /**
          * ASSIGNMENT 3.4
