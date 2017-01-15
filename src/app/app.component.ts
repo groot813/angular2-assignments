@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'ASSIGNMENT 1: creating a component';
+  title = 'ASSIGNMENT 2: template binding';
 }

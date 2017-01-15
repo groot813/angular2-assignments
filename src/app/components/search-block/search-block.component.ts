@@ -1,18 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-/**
- * ASSIGNMENT 1.1: add values to the decorator properties so the component will find your stylesheets, template and your component has a selector
- **/
+
 @Component({
-  selector: '',
-  templateUrl: '',
-  styleUrls: ['']
+    selector: 'search-block-component',
+    templateUrl: 'search-block.component.html',
+    styleUrls: ['search-block.component.scss']
 })
 export class SearchBlockComponent implements OnInit {
 
-  constructor() { }
+    /**
+     * ASSIGNMENT 2.1:
+     * add a the private property "title" of type string to this "SearchBlockComponent class"
+     * @example: private myProperty: string;
+     **/
 
-  ngOnInit() {
-  }
+    /**
+     * ASSIGNMENT 2.4:
+     * add another private property called "searchField" of type string
+     */
+
+    constructor() {
+        /**
+         * ASSIGNMENT 2.2:
+         * give the title property made in 2.1 a value
+         **/
+    }
+
+    ngOnInit() {
+
+    }
 
 }
