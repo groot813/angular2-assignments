@@ -17,7 +17,10 @@ export class MovieService extends MovieDataStoreService {
         params.append("r", "json");
 
         return this.http.get("http://www.omdbapi.com/", {search: params})
-            .map(res => res.json());
+            .map(res => res.json())
+            .subscribe((data) => {
+                this.setData(data);
+            });
 
         /**
          * ASSIGNMENT: 5.2:

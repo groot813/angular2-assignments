@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Subject} from "rxjs";
+import {Subject, Observable} from "rxjs";
 
 /**
  * ASSIGNMENT 5.1: rxjs observable study
@@ -23,7 +23,7 @@ export abstract class MovieDataStoreService {
      * next to the subject we als want to return the regular observable so we can subscribe to it
      * @type {"../../Observable".Observable<T>}
      */
-    public OmdbData$ = this._OmdbData.asObservable();
+    public OmdbData$ = <Observable<{Search: [any]}>> this._OmdbData.asObservable();
 
     /**
      * saves a new data object in the observable property OmdbData

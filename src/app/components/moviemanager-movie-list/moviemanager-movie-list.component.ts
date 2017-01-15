@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie-service/movie-service.service";
 
 @Component({
-    selector: 'app-moviemanager-movie-list',
+    selector: 'moviemanager-movie-list',
     templateUrl: './moviemanager-movie-list.component.html',
     styleUrls: ['./moviemanager-movie-list.component.scss']
 })
@@ -23,8 +23,13 @@ export class MoviemanagerMovieListComponent implements OnInit {
          * @example: this.movieService.myObservable$.subscribe((data) => {
          *     this.myPropArray = data;
          * })
-         * IMPORTANT: WHEN U GET THIS TO WORK IN THE BROWSER AND YOU SEE THE LIST OF RESULTS REAPPEAR, U SHOULD BRUSH YOUR SHOULDERS OFF, CUZ YOU KNOW ANGULAR2!
+         *
          */
+
+        this.movieService.OmdbData$.subscribe((data) => {
+            console.log(data);
+            this.searchResults = data.Search;
+        })
     }
 
 }

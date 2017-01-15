@@ -4,10 +4,9 @@ import {MovieService} from "../../services/movie-service/movie-service.service";
 
 
 @Component({
-    selector: 'search-block-component',
+    selector: 'moviemanager-block-component',
     templateUrl: 'moviemanager-search-block.component.html',
-    styleUrls: ['moviemanager-search-block.component.scss'],
-    providers: [MovieService]
+    styleUrls: ['moviemanager-search-block.component.scss']
 })
 export class MovieManagerSearchBlockComponent implements OnInit {
 
