@@ -23,7 +23,7 @@ export class SearchBlockComponent implements OnInit {
         /**
          * ASSIGNMENT 3.2
          * dependency inject the http service from angular
-         * @example http: Http
+         * @example private http: Http
          */
     ) {
         this.title = "search block component";
