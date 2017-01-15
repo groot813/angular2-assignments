@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
+import 'rxjs/add/operator/map'
 
 
 @Component({
@@ -9,45 +10,33 @@ import {Http} from "@angular/http";
 })
 export class SearchBlockComponent implements OnInit {
 
-    private title: string;
-    private searchField: string;
-
-    /**
-     * ASSIGNMENT 3.1
-     * add another property called "searchResults" of type Array<any>
-     * fill the property with an empty array in our constructor method
-     * @example this.myArrayProperty = [];
-     */
+    public title: string;
+    public searchField: string;
+    public searchResults: Array<any>;
 
     constructor(
-        /**
-         * ASSIGNMENT 3.2
-         * dependency inject the http service from angular
-         * @example http: Http
-         */
+        private http: Http
     ) {
+        this.searchResults = [];
         this.title = "search block component";
     }
 
-    private submit() {
+    public submit() {
         console.log("logging searchQuery: ", this.searchField);
-        /**
-         * ASSIGNMENT 3.4
-         * when the submit method is called from the button click do the request we made in 3.3 so data is requested from the API
-         *
-         */
+        this.getData(this.searchField);
     }
 
     /**
-     * ASSIGNMENT 3.3
-     * now that we have the http service available in our component lets do a request with it
-     * create a method that does the following request to the OMDB api provided by IMDB
-     * populate the array we made in assignment 3.1 so the data is available in our template
-     * @docs https://www.omdbapi.com/
-     * @docs https://angular.io/docs/ts/latest/api/http/index/Http-class.html
-     * @example request "http://www.omdbapi.com/?s=seven&y=&plot=short&r=json"
-     * DO LOG WHAT YOU ARE DOING SO YOU CAN DEBUG THE DATA AND EXTRACT IT CORRECTLY
+     * ASSIGNMENT 4.1 doing the actual request in our component is a bad apple
+     * lets create an MovieService class that does this for us
+     * remove the getData method from our component and put it in a seperate service in the ../services folder
+     * call the class MovieService
      */
+    private getData (searchQuery: string) {
+        this.http.get("http://www.omdbapi.com/?s=" + searchQuery + "&y=&plot=short&r=json")
+            .map(res => res.json())
+            .subscribe(OMDB => this.searchResults = OMDB.Search);
+    }
 
     ngOnInit() {
 
