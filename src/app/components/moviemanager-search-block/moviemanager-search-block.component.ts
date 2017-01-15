@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map'
 
 
 @Component({
-    selector: 'search-block-component',
+    selector: 'moviemanager-search-block',
     templateUrl: 'moviemanager-search-block.component.html',
     styleUrls: ['moviemanager-search-block.component.scss']
 })
