@@ -5,10 +5,10 @@ import 'rxjs/add/operator/map'
 
 @Component({
     selector: 'search-block-component',
-    templateUrl: 'search-block.component.html',
-    styleUrls: ['search-block.component.scss']
+    templateUrl: 'moviemanager-search-block.component.html',
+    styleUrls: ['moviemanager-search-block.component.scss']
 })
-export class SearchBlockComponent implements OnInit {
+export class MovieManagerSearchBlockComponent implements OnInit {
 
     public title: string;
     public searchField: string;

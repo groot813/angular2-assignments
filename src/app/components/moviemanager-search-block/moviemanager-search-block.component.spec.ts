@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SearchBlockComponent } from './search-block.component';
+import { MovieManagerSearchBlockComponent } from './moviemanager-search-block.component';
 
-describe('SearchBlockComponent', () => {
-  let component: SearchBlockComponent;
-  let fixture: ComponentFixture<SearchBlockComponent>;
+describe('MovieManagerSearchBlockComponent', () => {
+  let component: MovieManagerSearchBlockComponent;
+  let fixture: ComponentFixture<MovieManagerSearchBlockComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchBlockComponent ]
+      declarations: [ MovieManagerSearchBlockComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchBlockComponent);
+    fixture = TestBed.createComponent(MovieManagerSearchBlockComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
