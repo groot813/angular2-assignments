@@ -16,12 +16,4 @@
     the list we created below works but is currently mixed up with the search-block component. this can make it harder to read and understand
     migrate the part of this template and the component that is used for the overview to the "moviemanager-movie-list" component listed as a sibling of this components folder
 -->
-<ul>
-    <li *ngFor="let item of searchResults">
-        <span class="title">title: {{item.Title}}</span>
-        <span class="prop">year: {{item.Year}}</span>
-        <span class="prop">id: {{item.imdbID}}</span>
-        <span class="prop">type: {{item.Type}}</span>
-        <img [src]="item.Poster">
-    </li>
-</ul>
+

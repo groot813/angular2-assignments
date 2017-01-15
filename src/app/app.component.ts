@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'ASSIGNMENT 4: code cleanup';
+  title = 'ASSIGNMENT 5: OEPS!, fix it with a dataStore';
 }
