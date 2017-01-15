@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Http} from "@angular/http";
 
 
 @Component({
@@ -8,23 +9,45 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SearchBlockComponent implements OnInit {
 
-    /**
-     * ASSIGNMENT 2.1:
-     * add a the private property "title" of type string to this "SearchBlockComponent class"
-     * @example: private myProperty: string;
-     **/
+    private title: string;
+    private searchField: string;
 
     /**
-     * ASSIGNMENT 2.4:
-     * add another private property called "searchField" of type string
+     * ASSIGNMENT 3.1
+     * add another property called "searchResults" of type Array<any>
+     * fill the property with an empty array in our constructor method
+     * @example this.myArrayProperty = [];
      */
 
-    constructor() {
+    constructor(
         /**
-         * ASSIGNMENT 2.2:
-         * give the title property made in 2.1 a value
-         **/
+         * ASSIGNMENT 3.2
+         * dependency inject the http service from angular
+         * @example http: Http
+         */
+    ) {
+        this.title = "search block component";
     }
+
+    private submit() {
+        console.log("logging searchQuery: ", this.searchField);
+        /**
+         * ASSIGNMENT 3.4
+         * when the submit method is called from the button click do the request we made in 3.3 so data is requested from the API
+         *
+         */
+    }
+
+    /**
+     * ASSIGNMENT 3.3
+     * now that we have the http service available in our component lets do a request with it
+     * create a method that does the following request to the OMDB api provided by IMDB
+     * populate the array we made in assignment 3.1 so the data is available in our template
+     * @docs https://www.omdbapi.com/
+     * @docs https://angular.io/docs/ts/latest/api/http/index/Http-class.html
+     * @example request "http://www.omdbapi.com/?s=seven&y=&plot=short&r=json"
+     * DO LOG WHAT YOU ARE DOING SO YOU CAN DEBUG THE DATA AND EXTRACT IT CORRECTLY
+     */
 
     ngOnInit() {
 
