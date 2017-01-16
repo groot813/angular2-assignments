@@ -15,15 +15,6 @@ export class MoviemanagerMovieListComponent implements OnInit {
     }
 
     ngOnInit() {
-        /**
-         * ASSIGNMENT: 5.2: subscribe and show in template
-         * now that our data store has been filled by our service, we can also subscribe to the observable from here and get the data
-         * create another propery on this class and call it movieDataStoreSubscribtion.
-         * Now fil this property with an imidiatly invoked method that saves the data in the searchResults property
-         * @example: this.movieService.myObservable$.subscribe((data) => {
-         *     this.myPropArray = data;
-         * })
-         */
 
         this.movieService.OmdbData$.subscribe((data) => {
             console.log(data);
