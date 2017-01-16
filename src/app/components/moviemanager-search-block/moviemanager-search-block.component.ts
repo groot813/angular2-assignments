@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/map'
 import {MovieService} from "../../services/movie-service/movie-service.service";
 
-
 @Component({
     selector: 'moviemanager-block-component',
     templateUrl: 'moviemanager-search-block.component.html',
