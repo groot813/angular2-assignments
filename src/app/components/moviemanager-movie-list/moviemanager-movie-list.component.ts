@@ -23,7 +23,6 @@ export class MoviemanagerMovieListComponent implements OnInit {
          * @example: this.movieService.myObservable$.subscribe((data) => {
          *     this.myPropArray = data;
          * })
-         *
          */
 
         this.movieService.OmdbData$.subscribe((data) => {

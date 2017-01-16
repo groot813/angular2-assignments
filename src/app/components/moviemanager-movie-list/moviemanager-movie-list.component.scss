@@ -8,5 +8,12 @@ ul {
     span {
       display: block;
     }
+    &.active {
+      transform: scale(3);
+      position: absolute;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0) scale(3);
+    }
   }
 }
