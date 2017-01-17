@@ -25,7 +25,7 @@ export class MoviemanagerMovieBucketComponent implements OnInit {
      * to initiate our output we can do the following
      * this.myOutput.emit(clickedItem)
      * our @Output property is injected in out component like so
-     * @example <moviemanager-movie-bucket (bucketItems)="myMovieItems"></moviemanager-movie-bucket>
+     * @example <moviemanager-movie-bucket (bucketItems)="bucketListCallback(itemClicked)"></moviemanager-movie-bucket>
      */
 
     constructor() {
