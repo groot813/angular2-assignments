@@ -1,7 +1,10 @@
-<ul class="moviemanager-bucket-list">
-    <li *ngFor="let item of bucketItems; let i = index;">
-        <span class="title">{{item.title}}</span>
-        <img [src]="item.imageUrl">
-        <span class="cross-button" (click)="emitItem(item, i)">X</span>
-    </li>
-</ul>
+<div class="moviemanager-bucket-list">
+    <h2>moviebucket</h2>
+    <ul>
+        <li *ngFor="let item of bucketItems; let i = index;">
+            <span class="title">{{item.title}}</span>
+            <img [src]="item.imageUrl">
+            <span class="cross-button" (click)="emitItem(item, i)">X</span>
+        </li>
+    </ul>
+</div>

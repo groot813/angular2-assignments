@@ -5,7 +5,7 @@ import {IMovieItem} from "../../interfaces/IMovieItem";
 @Component({
     selector: 'moviemanager-movie-bucket',
     templateUrl: './moviemanager-movie-bucket.component.html',
-    styleUrls: ['./moviemanager-movie-bucket.component.css']
+    styleUrls: ['moviemanager-movie-bucket.component.scss']
 })
 export class MoviemanagerMovieBucketComponent implements OnInit {
 
