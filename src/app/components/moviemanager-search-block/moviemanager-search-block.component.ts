@@ -18,7 +18,6 @@ export class MovieManagerSearchBlockComponent implements OnInit {
     }
 
     public submit() {
-        console.log(this.searchField);
         this.movieService.getData(this.searchField);
     }
 

@@ -8,5 +8,5 @@ import {MovieService} from "./services/movie-service/movie-service.service";
   providers: [MovieService]
 })
 export class AppComponent {
-  title = 'ASSIGNMENT 7: creating a reusable component';
+  title = 'ASSIGNMENT 8: creating a router another routerPage containing a subscription form';
 }

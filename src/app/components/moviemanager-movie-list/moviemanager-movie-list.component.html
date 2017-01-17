@@ -1,5 +1,5 @@
 <ul class="moviemanager-movie-list-component">
-    <li *ngFor="let movie of movies">
+    <li *ngFor="let movie of movies" (click)="addToMovieBucket(movie)">
         <span class="title">title: {{movie.title}}</span>
         <span class="prop">year: {{movie.year}}</span>
         <span class="prop">id: {{movie.id}}</span>
@@ -8,10 +8,4 @@
     </li>
 </ul>
 
-<!--
-    ASSIGNMENT 7.3:
-    add a click event on the movie items and bind it to a method that sets an array of movieItems.
-    call the moviebucket component and input the array above into the component
-    @example <moviemanager-movie-bucket [bucketItems]="myMovieItems"></moviemanager-movie-bucket>
-    CHECK YOUR BROWSER TO SEE IF IT WORKS!!
--->
+<moviemanager-movie-bucket [bucketItems]="bucketItems" (callBackOnClick)="movieBucketCallBack($event)"></moviemanager-movie-bucket>

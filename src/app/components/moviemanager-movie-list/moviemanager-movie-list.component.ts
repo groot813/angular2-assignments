@@ -11,9 +11,11 @@ import {IMovieItem} from "../../interfaces/IMovieItem";
 export class MoviemanagerMovieListComponent implements OnInit {
 
     public movies: Array<IMovieItem>;
+    public bucketItems: Array<IMovieItem>;
 
     constructor(private movieService: MovieService) {
         this.movies = [];
+        this.bucketItems = [];
     }
 
     ngOnInit() {
@@ -22,13 +24,12 @@ export class MoviemanagerMovieListComponent implements OnInit {
         })
     }
 
-    /**
-     * ASSIGNMENT: 7.5
-     * create a method to put in the output property of our movie-bucket component
-     * throw an alert with the parameter
-     * @example public myOutPutMethod (itemClicked: IMovieItem) {
-     *    alert("item: " + itemClicked.title + " has been removed from bucketlist")
-     * }
-     */
+    public addToMovieBucket (movie) {
+        this.bucketItems.push(movie);
+    }
+
+    public movieBucketCallBack (movie: IMovieItem) {
+        alert(movie.title + " has been removed");
+    }
 
 }
