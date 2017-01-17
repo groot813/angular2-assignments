@@ -1,5 +1,7 @@
-<!--
-ASSIGNMENT 7.2:
-add some html for a list of items showing just a title and a poster image and add a cross to each list item to be able to remove it.
-Now bind a click event to a method that actually does remove the item from the Array
--->
+<ul class="moviemanager-bucket-list">
+    <li *ngFor="let item of bucketItems; let i = index;">
+        <span class="title">{{item.title}}</span>
+        <img [src]="item.imageUrl">
+        <span class="cross-button" (click)="emitItem(item, i)">X</span>
+    </li>
+</ul>
