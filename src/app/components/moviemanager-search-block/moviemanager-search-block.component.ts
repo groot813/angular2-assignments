@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import 'rxjs/add/operator/map'
 import {MovieService} from "../../services/movie-service/movie-service.service";
 
-
 @Component({
     selector: 'moviemanager-block-component',
     templateUrl: 'moviemanager-search-block.component.html',
@@ -19,7 +18,6 @@ export class MovieManagerSearchBlockComponent implements OnInit {
     }
 
     public submit() {
-        console.log(this.searchField);
         this.movieService.getData(this.searchField);
     }
 

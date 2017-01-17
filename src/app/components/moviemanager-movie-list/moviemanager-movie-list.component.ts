@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieService} from "../../services/movie-service/movie-service.service";
+import {MovieItemsFactory} from "../../factories/MovieItemsFactory";
+import {IMovieItem} from "../../interfaces/IMovieItem";
 
 @Component({
     selector: 'moviemanager-movie-list',
@@ -8,18 +10,26 @@ import {MovieService} from "../../services/movie-service/movie-service.service";
 })
 export class MoviemanagerMovieListComponent implements OnInit {
 
-    public searchResults: Array<any>;
+    public movies: Array<IMovieItem>;
+    public bucketItems: Array<IMovieItem>;
 
     constructor(private movieService: MovieService) {
-        this.searchResults = [];
+        this.movies = [];
+        this.bucketItems = [];
     }
 
     ngOnInit() {
-
         this.movieService.OmdbData$.subscribe((data) => {
-            console.log(data);
-            this.searchResults = data.Search;
+            this.movies = MovieItemsFactory.create(data.Search);
         })
+    }
+
+    public addToMovieBucket (movie) {
+        this.bucketItems.push(movie);
+    }
+
+    public movieBucketCallBack (movie: IMovieItem) {
+        alert(movie.title + " has been removed");
     }
 
 }

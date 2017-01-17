@@ -1,9 +1,11 @@
 <ul class="moviemanager-movie-list-component">
-    <li *ngFor="let item of searchResults">
-        <span class="title">title: {{item.Title}}</span>
-        <span class="prop">year: {{item.Year}}</span>
-        <span class="prop">id: {{item.imdbID}}</span>
-        <span class="prop">type: {{item.Type}}</span>
-        <img [src]="item.Poster">
+    <li *ngFor="let movie of movies" (click)="addToMovieBucket(movie)">
+        <span class="title">title: {{movie.title}}</span>
+        <span class="prop">year: {{movie.year}}</span>
+        <span class="prop">id: {{movie.id}}</span>
+        <span class="prop">type: {{movie.type}}</span>
+        <img [src]="movie.imageUrl">
     </li>
 </ul>
+
+<moviemanager-movie-bucket [bucketItems]="bucketItems" (callBackOnClick)="movieBucketCallBack($event)"></moviemanager-movie-bucket>
